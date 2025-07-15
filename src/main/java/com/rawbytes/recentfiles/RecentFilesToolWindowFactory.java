@@ -15,6 +15,7 @@ import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.vfs.VfsUtilCore;
+import com.intellij.openapi.vfs.LocalFileSystem;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -111,7 +112,10 @@ public class RecentFilesToolWindowFactory implements ToolWindowFactory {
             fileNameLabel.setText(file.getPresentableName());
             fileNameLabel.setIcon(file.getFileType().getIcon());
 
-            VirtualFile projectBase = project.getBaseDir();
+            String basePath = project.getBasePath();
+            VirtualFile projectBase = basePath != null
+                    ? LocalFileSystem.getInstance().findFileByPath(basePath)
+                    : null;
             String relPath = VfsUtilCore.getRelativePath(file, projectBase, '/');
             filePathLabel.setText(relPath != null ? relPath : file.getPresentableUrl());
             setToolTipText(file.getUrl());

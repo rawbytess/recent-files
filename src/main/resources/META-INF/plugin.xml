@@ -13,7 +13,7 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Displays a list of recently opened files in a tool window panel.
+    Displays a list of recently opened files in a tool window panel. The list is similar to the "Recent Files" popup (Ctrl+E), but it is persistent and can be docked in the IDE.
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
