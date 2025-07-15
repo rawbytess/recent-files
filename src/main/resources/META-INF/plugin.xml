@@ -5,7 +5,7 @@
 
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
-    <name>Recent files</name>
+    <name>Recent Files</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor url="https://rawbytes.com">Rawbytes</vendor>
@@ -13,7 +13,7 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    Displays a list of recently opened files in a tool window.
+    Displays a list of recently opened files in a tool window panel.
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.
@@ -26,7 +26,9 @@
         <toolWindow
                 id="Recent Files"
                 anchor="left"
-                factoryClass="com.rawbytes.recentfiles.RecentFilesToolWindowFactory"/>
+                factoryClass="com.rawbytes.recentfiles.RecentFilesToolWindowFactory"
+                icon="/icons/pluginIcon.svg"
+        />
     </extensions>
     <projectListeners>
         <listener class="com.rawbytes.recentfiles.RecentFilesListener"
